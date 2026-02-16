@@ -1,3 +1,5 @@
+# hosts/_template/users.nix
+
 { lib, ... }:
 
 let

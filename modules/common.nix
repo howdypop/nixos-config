@@ -1,3 +1,5 @@
+# modules/common.nix
+
 { lib, pkgs, ... }:
 
 let
