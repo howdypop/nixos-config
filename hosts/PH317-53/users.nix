@@ -1,5 +1,3 @@
-# hosts/predator/users.nix
-
 { lib, ... }:
 
 let

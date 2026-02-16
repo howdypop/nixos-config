@@ -1,5 +1,3 @@
-# hosts/_template/default.nix
-
 { ... }:
 
 let
