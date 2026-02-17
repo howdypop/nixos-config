@@ -16,4 +16,5 @@ in
   ];
 
   programs.zsh.enable = default true;
+  users.defaultUserShell = pkgs.zsh;
 }

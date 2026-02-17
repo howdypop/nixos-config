@@ -14,6 +14,6 @@ in
   }) users;
 
   home-manager.users = lib.mapAttrs (username: _user:
-    import (../../users + "/${username}/home.nix")
+    import (../../users/${username}/home.nix)
   ) users;
 }
