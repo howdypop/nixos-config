@@ -21,6 +21,7 @@
           type == "directory"
           && !(lib.strings.hasPrefix "_" name)
           && !(lib.strings.hasPrefix "." name)
+          && builtins.pathExists (./hosts/${name}/default.nix)
         )
         (builtins.readDir ./hosts)
       );
@@ -30,7 +31,7 @@
 
       modules = [
         ./modules/common.nix
-        (./hosts + "/${hostname}")
+        ./hosts/${hostname}
 
         home-manager.nixosModules.home-manager
         ({ lib, ... }: {
