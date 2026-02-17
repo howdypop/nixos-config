@@ -3,6 +3,12 @@
 { ... }:
 
 let
+  # bootSettings are configured to use systemd-boot for systems using UEFI.
+  bootSettings = {
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+  };
+
   servicesSettings = {
     services.openssh.enable = false;
   };
@@ -27,6 +33,7 @@ in
   # Set once per machine using the value from the installer-generated configuration.nix. Once set, do not ever change it.
   system.stateVersion = "xx.xx";
 }
+  // bootSettings
   // servicesSettings
   // networkingSettings
   // regionalSettings
