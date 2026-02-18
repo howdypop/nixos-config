@@ -14,7 +14,4 @@ in
   environment.systemPackages = with pkgs; [
     git
   ];
-
-  programs.zsh.enable = default true;
-  users.defaultUserShell = pkgs.zsh;
 }
