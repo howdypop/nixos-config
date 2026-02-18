@@ -30,7 +30,7 @@
       inherit system;
 
       modules = [
-        ./modules/common.nix
+        ./modules/core.nix
         ./hosts/${hostname}
 
         home-manager.nixosModules.home-manager
