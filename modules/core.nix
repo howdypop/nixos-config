@@ -1,10 +1,7 @@
-# modules/common.nix
+# modules/core.nix
 
 { lib, pkgs, ... }:
 
-let
-  default = lib.mkDefault;
-in
 {
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -12,6 +9,8 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    vim
+    curl
     git
   ];
 }
