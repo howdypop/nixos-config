@@ -3,10 +3,10 @@
 { ... }:
 
 {
-  programs.git = {
+  programs.git.settings = {
     enable = true;
-    userName = "howdypop";
-    userEmail = "howdypop3000@gmail.com";
+    user.name = "howdypop";
+    user.email = "howdypop3000@gmail.com";
 
     extraConfig = {
       init.defaultBranch = "main";
