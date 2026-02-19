@@ -27,6 +27,7 @@ in
     # Copy over once per machine from the installer-generated hardware-configuration.nix. Update it only upon reinstall or hardware changes.
     ./hardware-configuration.nix
     ./users.nix
+    ../../modules/desktops/wayland-system.nix
   ];
 
   # Set once per machine using the value from the installer-generated configuration.nix. Once set, do not ever change it.
