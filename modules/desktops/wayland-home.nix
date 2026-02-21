@@ -2,14 +2,6 @@
 
 { config, pkgs, ... }:
 
-let
-  wallpaperSettings = {
-    home.file."Pictures/Wallpapers" = {
-      source = ../../users/${config.home.username}/wallpapers;
-      recursive = true;
-    };
-  };
-in
 {
   home.packages = with pkgs; [
     alacritty
@@ -20,6 +12,11 @@ in
     swww
     wofi
   ];
+
+  home.file."Pictures/Wallpapers" = {
+    source = ../../users/${config.home.username}/wallpapers;
+    recursive = true;
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -52,4 +49,3 @@ in
     };
   };
 }
-  // wallpaperSettings
