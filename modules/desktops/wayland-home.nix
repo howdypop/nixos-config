@@ -3,9 +3,11 @@
 { config, pkgs, ... }:
 
 let
-  home.file."Pictures/Wallpapers" = {
-    source = ../../users/${config.home.username}/wallpapers;
-    recursive = true;
+  wallpaperSettings = {
+    home.file."Pictures/Wallpapers" = {
+      source = ../../users/${config.home.username}/wallpapers;
+      recursive = true;
+    };
   };
 in
 {
@@ -50,3 +52,4 @@ in
     };
   };
 }
+  // wallpaperSettings
