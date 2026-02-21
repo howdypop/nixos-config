@@ -2,11 +2,6 @@
 
 { config, ... }:
 
-let
-  packageSettings = {
-    nixpkgs.config.allowUnfree = true;
-  };
-in
 {
   imports = [
     ./git.nix
@@ -18,4 +13,3 @@ in
   home.stateVersion = "25.11";
   programs.home-manager.enable = true;
 }
-  // packageSettings

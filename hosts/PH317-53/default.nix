@@ -1,6 +1,6 @@
 # hosts/PH317-53/default.nix
 
-{ ... }:
+{ config, ... }:
 
 let
   bootSettings = {
@@ -21,6 +21,21 @@ let
     i18n.defaultLocale = "en_US.UTF-8";
     console.keyMap = "sv-latin1";
   };
+
+  gpuSettings = {
+    nixpkgs.config.allowUnfree = true;
+
+    services.xserver.videoDrivers = [ "nvidia" ];
+
+    hardware.graphics.enable = true;
+    hardware.nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      open = false;
+      nvidiaSettings = true;
+      pacakge = config.boot.kernelPackages.nvidiaPackages.stable;
+    }
+  };
 in
 {
   imports = [
@@ -37,3 +52,5 @@ in
   // servicesSettings
   // networkingSettings
   // regionalSettings
+  // gpuSettings
+  
