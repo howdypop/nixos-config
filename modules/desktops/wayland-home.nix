@@ -35,9 +35,13 @@
       "exec-once" = [
         "mako"
         "waybar"
-        "swww init"
+        "swww-daemon"
         "swww img ${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper.png"
       ];
+
+      input = {
+        kb_layout = "se";
+      };
 
       bind = [
         "$mod, Return, exec, $terminal"
